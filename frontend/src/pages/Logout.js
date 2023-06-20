@@ -6,7 +6,7 @@ const Logout = () => {
 
 export const action = () => {
     localStorage.removeItem('token');
-    redirect('/');
+    return redirect('/');
 }
 
 

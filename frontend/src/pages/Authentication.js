@@ -47,5 +47,5 @@ export const action = async ({request}) =>  {
 
   localStorage.setItem('token', token);
   // everything went fine.
-  redirect('/');
+  return redirect('/');
 }
