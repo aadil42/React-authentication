@@ -40,6 +40,12 @@ export const action = async ({request}) =>  {
     throw json({message: 'couldn\'t authenticate'}, {status: 500});
   }
 
+  // get the token and store it.
+
+  const responseData = await response.json();
+  const token = responseData.token;
+
+  localStorage.setItem('token', token);
   // everything went fine.
   redirect('/');
 }
