@@ -46,6 +46,11 @@ export const action = async ({request}) =>  {
   const token = responseData.token;
 
   localStorage.setItem('token', token);
+
+  // set the hours for  the  token expiration
+  const expiration = new Date();
+  expiration.setHours(expiration.getHours() + 1);
+  localStorage.setItem('expiration', expiration.toISOString());
   // everything went fine.
   return redirect('/');
 }
